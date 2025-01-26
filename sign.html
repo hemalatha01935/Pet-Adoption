@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up - Pet Adoption</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #ff8a00, #fbc2eb, #ff6f61, #ffb6c1); /* Added more colors for variation */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-size: 600% 600%; /* Larger size for smoother movement */
+            animation: gradientAnimation 12s ease infinite; /* Increased duration for a smoother effect */
+        }
+
+        /* Enhanced keyframe animation */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 0%;
+            }
+            25% {
+                background-position: 100% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            75% {
+                background-position: 0% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            color: #ff8a00;
+        }
+
+        header p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.3s ease; /* Smooth transition effect */
+        }
+
+        input:focus {
+            border-color: #ff8a00;
+            box-shadow: 0 0 5px rgba(255, 138, 0, 0.5); /* Highlight input on focus */
+        }
+
+        button {
+            background-color: #ff8a00;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e07b00;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .forgot-password a {
+            color: #ff8a00;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        a {
+            color: #ff8a00;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Error message styling */
+        .error {
+            border-color: red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>PetAdopt</h1>
+        <p>Find your furry friend today!</p>
+    </header>
+
+    <div id="login-form-container" class="form-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" name="login-email" required placeholder="Enter your email">
+
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="login-password" required placeholder="Enter your password">
+
+            <button type="submit">Login</button>
+        </form>
+        <div class="forgot-password">
+            <a href="#">Forgot your password?</a>
+        </div>
+        <p>Don't have an account? <a href="#" id="show-signup-form">Sign up</a></p>
+    </div>
+
+    <div id="signup-form-container" class="form-container" style="display: none;">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+            <label for="signup-email">Email:</label>
+            <input type="email" id="signup-email" name="signup-email" required placeholder="Enter your email">
+
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" name="signup-password" required placeholder="Create a password">
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm your password">
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="#" id="show-login-form">Login</a></p>
+    </div>
+</div>
+
+<script>
+    // Mock existing email addresses (in real-world, this would be a database query)
+    const existingEmails = ["user1@example.com", "user2@example.com"];
+
+    // Show sign-up form
+    document.getElementById("show-signup-form").addEventListener("click", function() {
+        document.getElementById("login-form-container").style.display = "none";
+        document.getElementById("signup-form-container").style.display = "block";
+    });
+
+    // Show login form
+    document.getElementById("show-login-form").addEventListener("click", function() {
+        document.getElementById("signup-form-container").style.display = "none";
+        document.getElementById("login-form-container").style.display = "block";
+    });
+
+    // Login form validation
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+        const email = document.getElementById("login-email").value;
+        const password = document.getElementById("login-password").value;
+
+        // Basic validation
+        if (!email || !password) {
+            alert("Please fill out all fields.");
+            event.preventDefault();
+        }
+    });
+
+    // Sign-up form validation
+    document.getElementById("signup-form").addEventListener("submit", function(event) {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("signup-email").value;
+        const password = document.getElementById("signup-password").value;
+        const confirmPassword = document.getElementById("confirm-password").value;
+
+        // Basic validation
+        if (!name || !email || !password || !confirmPassword) {
+            alert("Please fill out all fields.");
+            event.preventDefault();
+            return;
+        }
+
+        // Check if email already exists
+        if (existingEmails.includes(email)) {
+            alert("You already have an account with this email address. Please log in.");
+            event.preventDefault();
+            return;
+        }
+
+        // Check if passwords match
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            event.preventDefault();
+            return;
+        }
+    });
+</script>
+
+</body>
+</html>
