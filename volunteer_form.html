@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer Form</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff3e0;
+      color: #333;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff6f61;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input, select, textarea, button {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    input[type="checkbox"] {
+      width: auto;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 80px;
+    }
+
+    button {
+      background-color: #ff6f61;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e64a45;
+    }
+
+    .checkbox-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .checkbox-group label {
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .form-container {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Volunteer Form</h2>
+    <form>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="" disabled selected>Select your gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="18" max="100" placeholder="Enter your age" required>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+
+      <label>Services you can provide:</label>
+      <div class="checkbox-group">
+        <input type="checkbox" id="feeding" name="services" value="feeding">
+        <label for="feeding">Feeding</label>
+
+        <input type="checkbox" id="cleaning" name="services" value="cleaning">
+        <label for="cleaning">Cleaning</label>
+
+        <input type="checkbox" id="training" name="services" value="training">
+        <label for="training">Training</label>
+      </div>
+
+      <label for="reason">Reason for Volunteering:</label>
+      <textarea id="reason" name="reason" placeholder="Why do you want to volunteer?" required></textarea>
+
+      <button type="submit" onclick="submitForm(event)">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault(); // Prevent default form submission
+      alert("Thank you for volunteering! Your details have been submitted.");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff3e0;
+  color: #333;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Sub-header Section */
+.sub-header {
+  height: 40vh;
+  width: 100%;
+  background: linear-gradient(135deg, #ff6f61, #ffa726);
+  color: #fff;
+  text-align: center;
+}
+
+.sub-header h1 {
+  margin-top: 40px;
+  font-size: 50px; /* Reduced font size */
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ff6f61;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links ul li {
+  display: inline;
+}
+
+.nav-links ul li a {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* About Section */
+.about-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2.2rem;
+  color: #ff6f61;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+/* Animated Background Image */
+/* Animated Background Image */
+.animated-image {
+  width: 100%;
+  overflow: hidden;
+  margin: 20px auto;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.animated-image img {
+  width: 40%; /* Reduced width to 60% of the container */
+  max-width: 400px; /* Set a maximum width to prevent large scaling */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 0 auto; /* Center the image */
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Team Section */
+.team {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.team-member {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  max-width: 250px;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.team-member h4 {
+  font-size: 1.2rem;
+  color: #ff6f61;
+  margin-bottom: 5px;
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer h4 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footer p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.footer .icons .fa {
+  font-size: 1.2rem;
+  margin: 0 10px;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer .icons .fa:hover {
+  color: #ffa726;
+}
