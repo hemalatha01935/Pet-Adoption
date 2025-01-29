@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PetLover - Pet Adoption</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Additional CSS for pets page -->
+    <style>
+        .pet-card {
+            border: 1px solid #dee2e6;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .pet-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .pet-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .pet-info {
+            padding: 20px;
+            background: white;
+        }
+
+        .pet-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #7AB730;
+            margin-bottom: 10px;
+        }
+
+        .pet-description {
+            color: #666666;
+            margin-bottom: 15px;
+        }
+
+        .choose-btn {
+            background: #7AB730;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        .choose-btn:hover {
+            background: #669928;
+        }
+
+        .filter-buttons {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .filter-btn {
+            margin: 5px;
+            padding: 8px 20px;
+            border: 2px solid #7AB730;
+            background: transparent;
+            color: #7AB730;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #7AB730;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+        <div class="row bg-secondary py-2 px-xl-5">
+            <!-- Copy topbar from index.html -->
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+            <!-- Copy navbar content from index.html -->
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-light pt-5">
+        <div class="container py-5">
+            <div class="d-flex flex-column text-center mb-5">
+                <h4 class="text-secondary mb-3">Find Your Perfect Pet</h4>
+                <h1 class="display-4 m-0"><span class="text-primary">Pets</span> Available for Adoption</h1>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Pets Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Pets</button>
+                <button class="filter-btn" data-filter="dog">Dogs</button>
+                <button class="filter-btn" data-filter="cat">Cats</button>
+                <button class="filter-btn" data-filter="bird">Birds</button>
+            </div>
+            <div class="row">
+                <!-- Pet Card 1 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="dog">
+                    <div class="pet-card">
+                        <img class="pet-image" src="img/dog-1.jpg" alt="Dog">
+                        <div class="pet-info">
+                            <h3 class="pet-name">Max</h3>
+                            <p class="pet-description">
+                                Friendly Golden Retriever, 2 years old. Great with kids and other pets.
+                            </p>
+                            <a href="booking.html" class="choose-btn btn">Choose Me</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pet Card 2 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="cat">
+                    <div class="pet-card">
+                        <img class="pet-image" src="img/cat-1.jpg" alt="Cat">
+                        <div class="pet-info">
+                            <h3 class="pet-name">Luna</h3>
+                            <p class="pet-description">
+                                Gentle Persian cat, 1.5 years old. Loves cuddles and peaceful environments.
+                            </p>
+                            <a href="booking.html" class="choose-btn btn">Choose Me</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more pet cards as needed -->
+            </div>
+        </div>
+    </div>
+    <!-- Pets End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
+        <!-- Copy footer from index.html -->
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Filter functionality -->
+    <script>
+        $(document).ready(function() {
+            $('.filter-btn').click(function() {
+                // Remove active class from all buttons
+                $('.filter-btn').removeClass('active');
+                // Add active class to clicked button
+                $(this).addClass('active');
+
+                const category = $(this).data('filter');
+                
+                if (category === 'all') {
+                    $('.col-lg-4').show();
+                } else {
+                    $('.col-lg-4').hide();
+                    $(`[data-category="${category}"]`).show();
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
